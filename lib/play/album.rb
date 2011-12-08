@@ -44,6 +44,7 @@ module Play
     def lastfm_url
       key = Play.config['lastfm_key']
       return if key.blank?
+      return if name.blank?
 
       url = "http://ws.audioscrobbler.com/2.0/?method=album.getinfo"
       album_name = name.sub(/(EP|\[Explicit\]| )*$/i, '')
